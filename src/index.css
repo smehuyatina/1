@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    /* Wander Dark Luxury Theme */
+    --background: 220 50% 10%;
+    --foreground: 35 30% 94%;
+    --card: 218 45% 14%;
+    --card-foreground: 35 30% 94%;
+    --popover: 218 45% 14%;
+    --popover-foreground: 35 30% 94%;
+    --primary: 35 88% 67%;
+    --primary-foreground: 220 50% 10%;
+    --secondary: 218 40% 20%;
+    --secondary-foreground: 35 20% 85%;
+    --muted: 218 35% 18%;
+    --muted-foreground: 35 15% 55%;
+    --accent: 35 88% 67%;
+    --accent-foreground: 220 50% 10%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 218 35% 22%;
+    --input: 218 35% 22%;
+    --ring: 35 88% 67%;
+    --radius: 0.75rem;
+
+    /* Wander specific */
+    --navy: 220 50% 10%;
+    --navy-card: 218 45% 14%;
+    --navy-surface: 218 40% 18%;
+    --amber: 35 88% 67%;
+    --match-green: 142 69% 58%;
+    --match-yellow: 43 96% 56%;
+    --match-orange: 25 95% 53%;
+
+    --sidebar-background: 220 50% 10%;
+    --sidebar-foreground: 35 30% 94%;
+    --sidebar-primary: 35 88% 67%;
+    --sidebar-primary-foreground: 220 50% 10%;
+    --sidebar-accent: 218 40% 20%;
+    --sidebar-accent-foreground: 35 20% 85%;
+    --sidebar-border: 218 35% 22%;
+    --sidebar-ring: 35 88% 67%;
+  }
+
+  /* No light theme override — app is always dark */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-amber {
+    color: hsl(var(--amber));
+  }
+  .bg-amber {
+    background-color: hsl(var(--amber));
+  }
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+  .bg-navy-card {
+    background-color: hsl(var(--navy-card));
+  }
+  .bg-navy-surface {
+    background-color: hsl(var(--navy-surface));
+  }
+  .border-amber {
+    border-color: hsl(var(--amber));
+  }
+  .glow-amber {
+    box-shadow: 0 0 20px rgba(244, 162, 97, 0.3);
+  }
+  .match-green { color: hsl(var(--match-green)); }
+  .match-yellow { color: hsl(var(--match-yellow)); }
+  .match-orange { color: hsl(var(--match-orange)); }
+  .bg-match-green { background-color: hsl(var(--match-green)); }
+  .bg-match-yellow { background-color: hsl(var(--match-yellow)); }
+  .bg-match-orange { background-color: hsl(var(--match-orange)); }
+
+  /* Search input custom styles */
+  .search-input-wander::placeholder {
+    color: #8ba3c0;
+  }
+  .search-input-wander:focus {
+    border-color: hsl(var(--amber)) !important;
+    box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.15);
+    background: #223350 !important;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
